@@ -9,8 +9,6 @@ namespace miniPOS
 {
     public partial class Categories : Form
     {
-        string connection = "server=localhost;database=minipos;uid=root;pwd=root;";
-
         public Categories()
         {
             InitializeComponent();
@@ -33,7 +31,7 @@ namespace miniPOS
 
         private void GetCategories()
         {
-            using (MySqlConnection conn = new MySqlConnection(connection))
+            using (MySqlConnection conn = new MySqlConnection(DbConfig.ConnectionString))
             {
                 try
                 {
@@ -65,7 +63,7 @@ namespace miniPOS
                 return;
             }
 
-            using (MySqlConnection conn = new MySqlConnection(connection))
+            using (MySqlConnection conn = new MySqlConnection(DbConfig.ConnectionString))
             {
                 try
                 {

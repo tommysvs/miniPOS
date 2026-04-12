@@ -10,8 +10,6 @@ namespace miniPOS
     public partial class Dashboard : Form
     {
 
-        string connection = "server=localhost;database=minipos;uid=root;pwd=root;";
-
         public Dashboard()
         {
             InitializeComponent();
@@ -29,7 +27,7 @@ namespace miniPOS
 
         private void CountProducts()
         {
-            using (MySqlConnection conn = new MySqlConnection(connection))
+            using (MySqlConnection conn = new MySqlConnection(DbConfig.ConnectionString))
             {
                 try
                 {
@@ -49,7 +47,7 @@ namespace miniPOS
 
         private void CountClients()
         {
-            using (MySqlConnection conn = new MySqlConnection(connection))
+            using (MySqlConnection conn = new MySqlConnection(DbConfig.ConnectionString))
             {
                 try
                 {
@@ -68,7 +66,7 @@ namespace miniPOS
 
         private void CountSuppliers()
         {
-            using (MySqlConnection conn = new MySqlConnection(connection))
+            using (MySqlConnection conn = new MySqlConnection(DbConfig.ConnectionString))
             {
                 try
                 {
@@ -87,7 +85,7 @@ namespace miniPOS
 
         private void CountCategories()
         {
-            using (MySqlConnection conn = new MySqlConnection(connection))
+            using (MySqlConnection conn = new MySqlConnection(DbConfig.ConnectionString))
             {
                 try
                 {
@@ -106,7 +104,7 @@ namespace miniPOS
 
         private void CountProductsLowStock()
         {
-            using (MySqlConnection conn = new MySqlConnection(connection))
+            using (MySqlConnection conn = new MySqlConnection(DbConfig.ConnectionString))
             {
                 try
                 {
