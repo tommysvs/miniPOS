@@ -74,11 +74,13 @@
             // 
             // dgvProducts
             // 
+            dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProducts.Location = new Point(6, 53);
             dgvProducts.Name = "dgvProducts";
             dgvProducts.Size = new Size(571, 452);
             dgvProducts.TabIndex = 14;
+            dgvProducts.CellClick += dgvProducts_CellClick;
             // 
             // btnExport
             // 
@@ -100,7 +102,7 @@
             lblColors.AutoSize = true;
             lblColors.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblColors.ForeColor = SystemColors.ControlDarkDark;
-            lblColors.Location = new Point(131, 526);
+            lblColors.Location = new Point(152, 525);
             lblColors.Name = "lblColors";
             lblColors.Size = new Size(283, 13);
             lblColors.TabIndex = 12;
@@ -187,6 +189,7 @@
             txtProdStock.Name = "txtProdStock";
             txtProdStock.Size = new Size(311, 23);
             txtProdStock.TabIndex = 4;
+            txtProdStock.KeyPress += txtProdStock_KeyPress;
             // 
             // lblProdCat
             // 
@@ -267,6 +270,7 @@
             txtProdPrice.Name = "txtProdPrice";
             txtProdPrice.Size = new Size(311, 23);
             txtProdPrice.TabIndex = 3;
+            txtProdPrice.KeyPress += txtProdPrice_KeyPress;
             // 
             // lblProdName
             // 
