@@ -15,6 +15,7 @@ namespace miniPOS
         public Dashboard()
         {
             InitializeComponent();
+            lblDate.Text = "[Fecha actual del sistema — " + DateTime.Now.ToString("dd/MM/yyyy") + " ]";
         }
     }
 }

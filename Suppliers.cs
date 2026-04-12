@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace miniPOS
 {
-    public partial class Supplier : Form
+    public partial class Suppliers : Form
     {
-        public Supplier()
+        public Suppliers()
         {
             InitializeComponent();
         }

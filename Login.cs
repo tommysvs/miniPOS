@@ -6,5 +6,12 @@ namespace miniPOS
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            Container container = new Container();
+            container.Show();
+            this.Hide();
+        }
     }
 }

@@ -81,6 +81,7 @@
             btnLogin.TabIndex = 6;
             btnLogin.Text = "Iniciar sesión";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // label1
             // 
@@ -140,12 +141,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(820, 450);
             Controls.Add(loginPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(816, 489);
-            MinimumSize = new Size(816, 489);
+            MaximumSize = new Size(836, 489);
+            MinimumSize = new Size(836, 489);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MiniPOS - Iniciar sesión";

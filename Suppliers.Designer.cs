@@ -1,6 +1,6 @@
 ﻿namespace miniPOS
 {
-    partial class Supplier
+    partial class Suppliers
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,13 @@
         {
             SuspendLayout();
             // 
-            // Supplier
+            // Suppliers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "Supplier";
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Suppliers";
             Text = "Suppliers";
             ResumeLayout(false);
         }
