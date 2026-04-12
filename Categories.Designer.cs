@@ -181,11 +181,13 @@
             // 
             // dgvCategories
             // 
+            dgvCategories.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCategories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCategories.Location = new Point(6, 53);
             dgvCategories.Name = "dgvCategories";
             dgvCategories.Size = new Size(571, 470);
             dgvCategories.TabIndex = 11;
+            dgvCategories.CellClick += dgvCategories_CellClick;
             // 
             // lblCatCnt
             // 
