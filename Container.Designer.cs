@@ -45,7 +45,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { homeToolStripMenuItem, productsToolStripMenuItem, categoriesToolStripMenuItem, clientsToolStripMenuItem, suppliersToolStripMenuItem, reportsToolStripMenuItem, exitToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(820, 24);
+            menuStrip1.Size = new Size(936, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -102,12 +102,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(820, 450);
+            ClientSize = new Size(936, 600);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
-            MaximumSize = new Size(836, 489);
-            MinimumSize = new Size(836, 489);
+            MaximizeBox = false;
+            MaximumSize = new Size(952, 639);
+            MinimumSize = new Size(952, 639);
             Name = "Container";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MiniPOS";

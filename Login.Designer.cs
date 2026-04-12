@@ -53,9 +53,9 @@
             loginPanel.Controls.Add(txtUser);
             loginPanel.Controls.Add(lblTitle);
             loginPanel.Controls.Add(pbxLogo);
-            loginPanel.Location = new Point(247, 23);
+            loginPanel.Location = new Point(290, 24);
             loginPanel.Name = "loginPanel";
-            loginPanel.Size = new Size(311, 404);
+            loginPanel.Size = new Size(372, 554);
             loginPanel.TabIndex = 0;
             // 
             // lblVersion
@@ -63,7 +63,7 @@
             lblVersion.AutoSize = true;
             lblVersion.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblVersion.ForeColor = SystemColors.AppWorkspace;
-            lblVersion.Location = new Point(98, 378);
+            lblVersion.Location = new Point(125, 529);
             lblVersion.Name = "lblVersion";
             lblVersion.Size = new Size(119, 13);
             lblVersion.TabIndex = 7;
@@ -75,7 +75,7 @@
             btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.ForeColor = SystemColors.ControlLightLight;
-            btnLogin.Location = new Point(102, 294);
+            btnLogin.Location = new Point(134, 328);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(105, 27);
             btnLogin.TabIndex = 6;
@@ -86,7 +86,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(71, 161);
+            label1.Location = new Point(101, 209);
             label1.Name = "label1";
             label1.Size = new Size(47, 15);
             label1.TabIndex = 5;
@@ -95,7 +95,7 @@
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(71, 215);
+            lblPassword.Location = new Point(101, 263);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(67, 15);
             lblPassword.TabIndex = 4;
@@ -103,7 +103,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(71, 233);
+            txtPassword.Location = new Point(101, 281);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(171, 23);
             txtPassword.TabIndex = 3;
@@ -111,7 +111,7 @@
             // 
             // txtUser
             // 
-            txtUser.Location = new Point(71, 179);
+            txtUser.Location = new Point(101, 227);
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(171, 23);
             txtUser.TabIndex = 2;
@@ -120,7 +120,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(90, 95);
+            lblTitle.Location = new Point(119, 129);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(127, 37);
             lblTitle.TabIndex = 1;
@@ -129,7 +129,7 @@
             // pbxLogo
             // 
             pbxLogo.Image = Properties.Resources.logo;
-            pbxLogo.Location = new Point(117, 22);
+            pbxLogo.Location = new Point(148, 56);
             pbxLogo.Name = "pbxLogo";
             pbxLogo.Size = new Size(70, 70);
             pbxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -141,12 +141,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(820, 450);
+            ClientSize = new Size(936, 600);
             Controls.Add(loginPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(836, 489);
-            MinimumSize = new Size(836, 489);
+            MaximumSize = new Size(952, 639);
+            MinimumSize = new Size(952, 639);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MiniPOS - Iniciar sesión";

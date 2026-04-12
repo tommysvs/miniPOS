@@ -60,7 +60,7 @@
             grpbCatData.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpbCatData.Location = new Point(12, 12);
             grpbCatData.Name = "grpbCatData";
-            grpbCatData.Size = new Size(390, 426);
+            grpbCatData.Size = new Size(323, 545);
             grpbCatData.TabIndex = 0;
             grpbCatData.TabStop = false;
             grpbCatData.Text = "Datos de la categoría";
@@ -121,7 +121,7 @@
             // 
             txtCatDesc.Location = new Point(6, 174);
             txtCatDesc.Name = "txtCatDesc";
-            txtCatDesc.Size = new Size(378, 23);
+            txtCatDesc.Size = new Size(311, 23);
             txtCatDesc.TabIndex = 4;
             // 
             // lblCatName
@@ -138,7 +138,7 @@
             // 
             txtCatName.Location = new Point(6, 112);
             txtCatName.Name = "txtCatName";
-            txtCatName.Size = new Size(378, 23);
+            txtCatName.Size = new Size(311, 23);
             txtCatName.TabIndex = 2;
             // 
             // lblCatId
@@ -157,7 +157,7 @@
             txtCatId.Location = new Point(6, 53);
             txtCatId.Name = "txtCatId";
             txtCatId.PlaceholderText = "(Automático)";
-            txtCatId.Size = new Size(378, 23);
+            txtCatId.Size = new Size(311, 23);
             txtCatId.TabIndex = 0;
             // 
             // grpbCatList
@@ -166,9 +166,9 @@
             grpbCatList.Controls.Add(btnFind);
             grpbCatList.Controls.Add(txtFind);
             grpbCatList.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            grpbCatList.Location = new Point(418, 12);
+            grpbCatList.Location = new Point(341, 12);
             grpbCatList.Name = "grpbCatList";
-            grpbCatList.Size = new Size(390, 426);
+            grpbCatList.Size = new Size(583, 545);
             grpbCatList.TabIndex = 1;
             grpbCatList.TabStop = false;
             grpbCatList.Text = "Listado de categorías";
@@ -178,7 +178,7 @@
             lblCatCnt.AutoSize = true;
             lblCatCnt.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCatCnt.ForeColor = SystemColors.ControlDarkDark;
-            lblCatCnt.Location = new Point(6, 408);
+            lblCatCnt.Location = new Point(6, 526);
             lblCatCnt.Name = "lblCatCnt";
             lblCatCnt.Size = new Size(157, 13);
             lblCatCnt.TabIndex = 10;
@@ -191,7 +191,7 @@
             btnFind.FlatAppearance.BorderSize = 0;
             btnFind.FlatStyle = FlatStyle.Flat;
             btnFind.ForeColor = SystemColors.ButtonHighlight;
-            btnFind.Location = new Point(295, 24);
+            btnFind.Location = new Point(488, 18);
             btnFind.Name = "btnFind";
             btnFind.Size = new Size(89, 28);
             btnFind.TabIndex = 9;
@@ -200,17 +200,17 @@
             // 
             // txtFind
             // 
-            txtFind.Location = new Point(6, 27);
+            txtFind.Location = new Point(6, 22);
             txtFind.Name = "txtFind";
             txtFind.PlaceholderText = "Buscar categoría...";
-            txtFind.Size = new Size(283, 23);
+            txtFind.Size = new Size(476, 23);
             txtFind.TabIndex = 0;
             // 
             // Categories
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(820, 450);
+            ClientSize = new Size(936, 569);
             Controls.Add(grpbCatList);
             Controls.Add(grpbCatData);
             FormBorderStyle = FormBorderStyle.None;

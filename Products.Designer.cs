@@ -29,11 +29,17 @@
         private void InitializeComponent()
         {
             grpbProdList = new GroupBox();
+            btnExport = new Button();
+            lblColors = new Label();
             cmbProdCatFind = new ComboBox();
             lblProdCnt = new Label();
             btnFind = new Button();
             txtFind = new TextBox();
             grpbProdData = new GroupBox();
+            lblProdStock = new Label();
+            txtProdStock = new TextBox();
+            lblProdCat = new Label();
+            cmbProdCat = new ComboBox();
             btnDelete = new Button();
             btnEdit = new Button();
             btnSave = new Button();
@@ -43,36 +49,57 @@
             txtProdName = new TextBox();
             lblCatId = new Label();
             txtProdId = new TextBox();
-            cmbProdCat = new ComboBox();
-            lblProdCat = new Label();
-            lblProdStock = new Label();
-            txtProdStock = new TextBox();
-            lblColors = new Label();
             grpbProdList.SuspendLayout();
             grpbProdData.SuspendLayout();
             SuspendLayout();
             // 
             // grpbProdList
             // 
+            grpbProdList.Controls.Add(btnExport);
             grpbProdList.Controls.Add(lblColors);
             grpbProdList.Controls.Add(cmbProdCatFind);
             grpbProdList.Controls.Add(lblProdCnt);
             grpbProdList.Controls.Add(btnFind);
             grpbProdList.Controls.Add(txtFind);
             grpbProdList.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            grpbProdList.Location = new Point(418, 12);
+            grpbProdList.Location = new Point(341, 12);
             grpbProdList.Name = "grpbProdList";
-            grpbProdList.Size = new Size(390, 426);
+            grpbProdList.Size = new Size(583, 545);
             grpbProdList.TabIndex = 3;
             grpbProdList.TabStop = false;
             grpbProdList.Text = "Listado de productos";
             // 
+            // btnExport
+            // 
+            btnExport.BackColor = Color.Silver;
+            btnExport.Cursor = Cursors.Hand;
+            btnExport.FlatAppearance.BorderSize = 0;
+            btnExport.FlatStyle = FlatStyle.Flat;
+            btnExport.ForeColor = SystemColors.ActiveCaptionText;
+            btnExport.Location = new Point(441, 511);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(136, 28);
+            btnExport.TabIndex = 13;
+            btnExport.Text = "Exportar a Excel";
+            btnExport.UseVisualStyleBackColor = false;
+            // 
+            // lblColors
+            // 
+            lblColors.AutoSize = true;
+            lblColors.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblColors.ForeColor = SystemColors.ControlDarkDark;
+            lblColors.Location = new Point(131, 526);
+            lblColors.Name = "lblColors";
+            lblColors.Size = new Size(283, 13);
+            lblColors.TabIndex = 12;
+            lblColors.Text = "· Verde: stock normal · Rojo: stock bajo (< 5 unidades)";
+            // 
             // cmbProdCatFind
             // 
             cmbProdCatFind.FormattingEnabled = true;
-            cmbProdCatFind.Location = new Point(263, 27);
+            cmbProdCatFind.Location = new Point(351, 22);
             cmbProdCatFind.Name = "cmbProdCatFind";
-            cmbProdCatFind.Size = new Size(121, 23);
+            cmbProdCatFind.Size = new Size(131, 23);
             cmbProdCatFind.TabIndex = 11;
             // 
             // lblProdCnt
@@ -80,7 +107,7 @@
             lblProdCnt.AutoSize = true;
             lblProdCnt.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblProdCnt.ForeColor = SystemColors.ControlDarkDark;
-            lblProdCnt.Location = new Point(6, 408);
+            lblProdCnt.Location = new Point(6, 526);
             lblProdCnt.Name = "lblProdCnt";
             lblProdCnt.Size = new Size(67, 13);
             lblProdCnt.TabIndex = 10;
@@ -93,7 +120,7 @@
             btnFind.FlatAppearance.BorderSize = 0;
             btnFind.FlatStyle = FlatStyle.Flat;
             btnFind.ForeColor = SystemColors.ButtonHighlight;
-            btnFind.Location = new Point(6, 56);
+            btnFind.Location = new Point(488, 18);
             btnFind.Name = "btnFind";
             btnFind.Size = new Size(89, 28);
             btnFind.TabIndex = 9;
@@ -102,10 +129,10 @@
             // 
             // txtFind
             // 
-            txtFind.Location = new Point(6, 27);
+            txtFind.Location = new Point(6, 22);
             txtFind.Name = "txtFind";
             txtFind.PlaceholderText = "Buscar producto en tiempo real";
-            txtFind.Size = new Size(251, 23);
+            txtFind.Size = new Size(339, 23);
             txtFind.TabIndex = 0;
             // 
             // grpbProdData
@@ -126,10 +153,45 @@
             grpbProdData.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpbProdData.Location = new Point(12, 12);
             grpbProdData.Name = "grpbProdData";
-            grpbProdData.Size = new Size(390, 426);
+            grpbProdData.Size = new Size(323, 545);
             grpbProdData.TabIndex = 2;
             grpbProdData.TabStop = false;
             grpbProdData.Text = "Datos del producto";
+            // 
+            // lblProdStock
+            // 
+            lblProdStock.AutoSize = true;
+            lblProdStock.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProdStock.Location = new Point(6, 282);
+            lblProdStock.Name = "lblProdStock";
+            lblProdStock.Size = new Size(82, 15);
+            lblProdStock.TabIndex = 15;
+            lblProdStock.Text = "Stock actual: *";
+            // 
+            // txtProdStock
+            // 
+            txtProdStock.Location = new Point(6, 300);
+            txtProdStock.Name = "txtProdStock";
+            txtProdStock.Size = new Size(311, 23);
+            txtProdStock.TabIndex = 14;
+            // 
+            // lblProdCat
+            // 
+            lblProdCat.AutoSize = true;
+            lblProdCat.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProdCat.Location = new Point(6, 154);
+            lblProdCat.Name = "lblProdCat";
+            lblProdCat.Size = new Size(69, 15);
+            lblProdCat.TabIndex = 13;
+            lblProdCat.Text = "Categoría: *";
+            // 
+            // cmbProdCat
+            // 
+            cmbProdCat.FormattingEnabled = true;
+            cmbProdCat.Location = new Point(6, 172);
+            cmbProdCat.Name = "cmbProdCat";
+            cmbProdCat.Size = new Size(311, 23);
+            cmbProdCat.TabIndex = 12;
             // 
             // btnDelete
             // 
@@ -138,7 +200,7 @@
             btnDelete.FlatAppearance.BorderSize = 0;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.ForeColor = SystemColors.ButtonHighlight;
-            btnDelete.Location = new Point(196, 392);
+            btnDelete.Location = new Point(196, 357);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(89, 28);
             btnDelete.TabIndex = 8;
@@ -152,7 +214,7 @@
             btnEdit.FlatAppearance.BorderSize = 0;
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.ForeColor = SystemColors.ButtonHighlight;
-            btnEdit.Location = new Point(101, 392);
+            btnEdit.Location = new Point(101, 357);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(89, 28);
             btnEdit.TabIndex = 7;
@@ -166,7 +228,7 @@
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.ForeColor = SystemColors.ButtonHighlight;
-            btnSave.Location = new Point(6, 392);
+            btnSave.Location = new Point(6, 357);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(89, 28);
             btnSave.TabIndex = 6;
@@ -187,7 +249,7 @@
             // 
             txtProdPrice.Location = new Point(6, 235);
             txtProdPrice.Name = "txtProdPrice";
-            txtProdPrice.Size = new Size(378, 23);
+            txtProdPrice.Size = new Size(311, 23);
             txtProdPrice.TabIndex = 4;
             // 
             // lblProdName
@@ -204,7 +266,7 @@
             // 
             txtProdName.Location = new Point(6, 112);
             txtProdName.Name = "txtProdName";
-            txtProdName.Size = new Size(378, 23);
+            txtProdName.Size = new Size(311, 23);
             txtProdName.TabIndex = 2;
             // 
             // lblCatId
@@ -223,60 +285,14 @@
             txtProdId.Location = new Point(6, 53);
             txtProdId.Name = "txtProdId";
             txtProdId.PlaceholderText = "(Automático)";
-            txtProdId.Size = new Size(378, 23);
+            txtProdId.Size = new Size(311, 23);
             txtProdId.TabIndex = 0;
-            // 
-            // cmbProdCat
-            // 
-            cmbProdCat.FormattingEnabled = true;
-            cmbProdCat.Location = new Point(6, 172);
-            cmbProdCat.Name = "cmbProdCat";
-            cmbProdCat.Size = new Size(378, 23);
-            cmbProdCat.TabIndex = 12;
-            // 
-            // lblProdCat
-            // 
-            lblProdCat.AutoSize = true;
-            lblProdCat.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblProdCat.Location = new Point(6, 154);
-            lblProdCat.Name = "lblProdCat";
-            lblProdCat.Size = new Size(69, 15);
-            lblProdCat.TabIndex = 13;
-            lblProdCat.Text = "Categoría: *";
-            // 
-            // lblProdStock
-            // 
-            lblProdStock.AutoSize = true;
-            lblProdStock.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblProdStock.Location = new Point(6, 282);
-            lblProdStock.Name = "lblProdStock";
-            lblProdStock.Size = new Size(82, 15);
-            lblProdStock.TabIndex = 15;
-            lblProdStock.Text = "Stock actual: *";
-            // 
-            // txtProdStock
-            // 
-            txtProdStock.Location = new Point(6, 300);
-            txtProdStock.Name = "txtProdStock";
-            txtProdStock.Size = new Size(378, 23);
-            txtProdStock.TabIndex = 14;
-            // 
-            // lblColors
-            // 
-            lblColors.AutoSize = true;
-            lblColors.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblColors.ForeColor = SystemColors.ControlDarkDark;
-            lblColors.Location = new Point(79, 407);
-            lblColors.Name = "lblColors";
-            lblColors.Size = new Size(283, 13);
-            lblColors.TabIndex = 12;
-            lblColors.Text = "· Verde: stock normal · Rojo: stock bajo (< 5 unidades)";
             // 
             // Products
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(820, 450);
+            ClientSize = new Size(936, 569);
             Controls.Add(grpbProdList);
             Controls.Add(grpbProdData);
             FormBorderStyle = FormBorderStyle.None;
@@ -311,5 +327,6 @@
         private Label lblProdStock;
         private TextBox txtProdStock;
         private Label lblColors;
+        private Button btnExport;
     }
 }

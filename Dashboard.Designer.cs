@@ -88,7 +88,7 @@
             pnlProd.Controls.Add(lblProdReg);
             pnlProd.Location = new Point(12, 31);
             pnlProd.Name = "pnlProd";
-            pnlProd.Size = new Size(154, 69);
+            pnlProd.Size = new Size(177, 69);
             pnlProd.TabIndex = 5;
             // 
             // lblCntProd
@@ -96,7 +96,7 @@
             lblCntProd.AutoSize = true;
             lblCntProd.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCntProd.ForeColor = Color.DodgerBlue;
-            lblCntProd.Location = new Point(63, 15);
+            lblCntProd.Location = new Point(78, 12);
             lblCntProd.Name = "lblCntProd";
             lblCntProd.Size = new Size(25, 30);
             lblCntProd.TabIndex = 7;
@@ -107,7 +107,7 @@
             lblProdReg.AutoSize = true;
             lblProdReg.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblProdReg.ForeColor = Color.DimGray;
-            lblProdReg.Location = new Point(18, 45);
+            lblProdReg.Location = new Point(30, 45);
             lblProdReg.Name = "lblProdReg";
             lblProdReg.Size = new Size(122, 15);
             lblProdReg.TabIndex = 6;
@@ -118,9 +118,9 @@
             pnlCli.BackColor = Color.White;
             pnlCli.Controls.Add(lblCntCli);
             pnlCli.Controls.Add(lblCliReg);
-            pnlCli.Location = new Point(172, 31);
+            pnlCli.Location = new Point(195, 31);
             pnlCli.Name = "pnlCli";
-            pnlCli.Size = new Size(154, 69);
+            pnlCli.Size = new Size(177, 69);
             pnlCli.TabIndex = 8;
             // 
             // lblCntCli
@@ -128,7 +128,7 @@
             lblCntCli.AutoSize = true;
             lblCntCli.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCntCli.ForeColor = Color.MediumSeaGreen;
-            lblCntCli.Location = new Point(63, 15);
+            lblCntCli.Location = new Point(78, 12);
             lblCntCli.Name = "lblCntCli";
             lblCntCli.Size = new Size(25, 30);
             lblCntCli.TabIndex = 7;
@@ -139,7 +139,7 @@
             lblCliReg.AutoSize = true;
             lblCliReg.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCliReg.ForeColor = Color.DimGray;
-            lblCliReg.Location = new Point(18, 45);
+            lblCliReg.Location = new Point(37, 45);
             lblCliReg.Name = "lblCliReg";
             lblCliReg.Size = new Size(110, 15);
             lblCliReg.TabIndex = 6;
@@ -150,9 +150,9 @@
             pnlSupp.BackColor = Color.White;
             pnlSupp.Controls.Add(lblCntSupp);
             pnlSupp.Controls.Add(lblSuppAct);
-            pnlSupp.Location = new Point(332, 31);
+            pnlSupp.Location = new Point(378, 31);
             pnlSupp.Name = "pnlSupp";
-            pnlSupp.Size = new Size(154, 69);
+            pnlSupp.Size = new Size(177, 69);
             pnlSupp.TabIndex = 9;
             // 
             // lblCntSupp
@@ -160,7 +160,7 @@
             lblCntSupp.AutoSize = true;
             lblCntSupp.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCntSupp.ForeColor = Color.SlateBlue;
-            lblCntSupp.Location = new Point(63, 15);
+            lblCntSupp.Location = new Point(78, 12);
             lblCntSupp.Name = "lblCntSupp";
             lblCntSupp.Size = new Size(25, 30);
             lblCntSupp.TabIndex = 7;
@@ -171,7 +171,7 @@
             lblSuppAct.AutoSize = true;
             lblSuppAct.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblSuppAct.ForeColor = Color.DimGray;
-            lblSuppAct.Location = new Point(18, 45);
+            lblSuppAct.Location = new Point(36, 45);
             lblSuppAct.Name = "lblSuppAct";
             lblSuppAct.Size = new Size(112, 15);
             lblSuppAct.TabIndex = 6;
@@ -182,9 +182,9 @@
             pnlCat.BackColor = Color.White;
             pnlCat.Controls.Add(lblCntCat);
             pnlCat.Controls.Add(lblCat);
-            pnlCat.Location = new Point(492, 31);
+            pnlCat.Location = new Point(561, 31);
             pnlCat.Name = "pnlCat";
-            pnlCat.Size = new Size(154, 69);
+            pnlCat.Size = new Size(177, 69);
             pnlCat.TabIndex = 10;
             // 
             // lblCntCat
@@ -192,7 +192,7 @@
             lblCntCat.AutoSize = true;
             lblCntCat.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCntCat.ForeColor = Color.DarkOrange;
-            lblCntCat.Location = new Point(63, 15);
+            lblCntCat.Location = new Point(78, 12);
             lblCntCat.Name = "lblCntCat";
             lblCntCat.Size = new Size(25, 30);
             lblCntCat.TabIndex = 7;
@@ -203,20 +203,20 @@
             lblCat.AutoSize = true;
             lblCat.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCat.ForeColor = Color.DimGray;
-            lblCat.Location = new Point(18, 45);
+            lblCat.Location = new Point(59, 45);
             lblCat.Name = "lblCat";
-            lblCat.Size = new Size(112, 15);
+            lblCat.Size = new Size(63, 15);
             lblCat.TabIndex = 6;
-            lblCat.Text = "Proveedores activos";
+            lblCat.Text = "Categorías";
             // 
             // pnlProdLow
             // 
             pnlProdLow.BackColor = Color.White;
             pnlProdLow.Controls.Add(lblCntPrdLow);
             pnlProdLow.Controls.Add(lblProdLow);
-            pnlProdLow.Location = new Point(652, 31);
+            pnlProdLow.Location = new Point(744, 31);
             pnlProdLow.Name = "pnlProdLow";
-            pnlProdLow.Size = new Size(154, 69);
+            pnlProdLow.Size = new Size(177, 69);
             pnlProdLow.TabIndex = 11;
             // 
             // lblCntPrdLow
@@ -224,7 +224,7 @@
             lblCntPrdLow.AutoSize = true;
             lblCntPrdLow.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCntPrdLow.ForeColor = Color.Red;
-            lblCntPrdLow.Location = new Point(63, 15);
+            lblCntPrdLow.Location = new Point(78, 12);
             lblCntPrdLow.Name = "lblCntPrdLow";
             lblCntPrdLow.Size = new Size(25, 30);
             lblCntPrdLow.TabIndex = 7;
@@ -235,11 +235,11 @@
             lblProdLow.AutoSize = true;
             lblProdLow.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblProdLow.ForeColor = Color.DimGray;
-            lblProdLow.Location = new Point(18, 45);
+            lblProdLow.Location = new Point(19, 45);
             lblProdLow.Name = "lblProdLow";
-            lblProdLow.Size = new Size(112, 15);
+            lblProdLow.Size = new Size(141, 15);
             lblProdLow.TabIndex = 6;
-            lblProdLow.Text = "Proveedores activos";
+            lblProdLow.Text = "Productos con stock bajo";
             // 
             // grpbProducts
             // 
@@ -247,7 +247,7 @@
             grpbProducts.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpbProducts.Location = new Point(12, 106);
             grpbProducts.Name = "grpbProducts";
-            grpbProducts.Size = new Size(390, 179);
+            grpbProducts.Size = new Size(450, 276);
             grpbProducts.TabIndex = 12;
             grpbProducts.TabStop = false;
             grpbProducts.Text = "Productos con menor stock";
@@ -258,7 +258,7 @@
             btnGetAllProd.Cursor = Cursors.Hand;
             btnGetAllProd.FlatAppearance.BorderSize = 0;
             btnGetAllProd.FlatStyle = FlatStyle.Flat;
-            btnGetAllProd.Location = new Point(6, 150);
+            btnGetAllProd.Location = new Point(6, 247);
             btnGetAllProd.Name = "btnGetAllProd";
             btnGetAllProd.Size = new Size(164, 23);
             btnGetAllProd.TabIndex = 0;
@@ -269,9 +269,9 @@
             // 
             grpbSuppliers.Controls.Add(btnGetAllSupp);
             grpbSuppliers.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            grpbSuppliers.Location = new Point(416, 106);
+            grpbSuppliers.Location = new Point(474, 106);
             grpbSuppliers.Name = "grpbSuppliers";
-            grpbSuppliers.Size = new Size(390, 179);
+            grpbSuppliers.Size = new Size(450, 276);
             grpbSuppliers.TabIndex = 13;
             grpbSuppliers.TabStop = false;
             grpbSuppliers.Text = "Proveedores registrados recientemente";
@@ -282,7 +282,7 @@
             btnGetAllSupp.Cursor = Cursors.Hand;
             btnGetAllSupp.FlatAppearance.BorderSize = 0;
             btnGetAllSupp.FlatStyle = FlatStyle.Flat;
-            btnGetAllSupp.Location = new Point(6, 150);
+            btnGetAllSupp.Location = new Point(6, 247);
             btnGetAllSupp.Name = "btnGetAllSupp";
             btnGetAllSupp.Size = new Size(176, 23);
             btnGetAllSupp.TabIndex = 1;
@@ -292,9 +292,9 @@
             // groupBox1
             // 
             groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(12, 291);
+            groupBox1.Location = new Point(12, 388);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(794, 147);
+            groupBox1.Size = new Size(912, 169);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             groupBox1.Text = "Productos por categoría";
@@ -303,15 +303,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(836, 489);
-            Controls.Add(groupBox1);
+            ClientSize = new Size(936, 569);
             Controls.Add(grpbSuppliers);
+            Controls.Add(groupBox1);
+            Controls.Add(pnlProd);
             Controls.Add(grpbProducts);
             Controls.Add(pnlProdLow);
             Controls.Add(pnlCat);
             Controls.Add(pnlSupp);
             Controls.Add(pnlCli);
-            Controls.Add(pnlProd);
             Controls.Add(lblDate);
             Controls.Add(lblResumen);
             FormBorderStyle = FormBorderStyle.None;
