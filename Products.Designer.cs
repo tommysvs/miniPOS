@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             grpbProdList = new GroupBox();
+            dgvProducts = new DataGridView();
             btnExport = new Button();
             lblColors = new Label();
             cmbProdCatFind = new ComboBox();
@@ -50,11 +51,13 @@
             lblCatId = new Label();
             txtProdId = new TextBox();
             grpbProdList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             grpbProdData.SuspendLayout();
             SuspendLayout();
             // 
             // grpbProdList
             // 
+            grpbProdList.Controls.Add(dgvProducts);
             grpbProdList.Controls.Add(btnExport);
             grpbProdList.Controls.Add(lblColors);
             grpbProdList.Controls.Add(cmbProdCatFind);
@@ -69,6 +72,14 @@
             grpbProdList.TabStop = false;
             grpbProdList.Text = "Listado de productos";
             // 
+            // dgvProducts
+            // 
+            dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProducts.Location = new Point(6, 53);
+            dgvProducts.Name = "dgvProducts";
+            dgvProducts.Size = new Size(571, 452);
+            dgvProducts.TabIndex = 14;
+            // 
             // btnExport
             // 
             btnExport.BackColor = Color.Silver;
@@ -79,9 +90,10 @@
             btnExport.Location = new Point(441, 511);
             btnExport.Name = "btnExport";
             btnExport.Size = new Size(136, 28);
-            btnExport.TabIndex = 13;
+            btnExport.TabIndex = 11;
             btnExport.Text = "Exportar a Excel";
             btnExport.UseVisualStyleBackColor = false;
+            btnExport.Click += btnExport_Click;
             // 
             // lblColors
             // 
@@ -100,7 +112,7 @@
             cmbProdCatFind.Location = new Point(351, 22);
             cmbProdCatFind.Name = "cmbProdCatFind";
             cmbProdCatFind.Size = new Size(131, 23);
-            cmbProdCatFind.TabIndex = 11;
+            cmbProdCatFind.TabIndex = 9;
             // 
             // lblProdCnt
             // 
@@ -123,9 +135,10 @@
             btnFind.Location = new Point(488, 18);
             btnFind.Name = "btnFind";
             btnFind.Size = new Size(89, 28);
-            btnFind.TabIndex = 9;
+            btnFind.TabIndex = 10;
             btnFind.Text = "Buscar";
             btnFind.UseVisualStyleBackColor = false;
+            btnFind.Click += btnFind_Click;
             // 
             // txtFind
             // 
@@ -133,7 +146,7 @@
             txtFind.Name = "txtFind";
             txtFind.PlaceholderText = "Buscar producto en tiempo real";
             txtFind.Size = new Size(339, 23);
-            txtFind.TabIndex = 0;
+            txtFind.TabIndex = 8;
             // 
             // grpbProdData
             // 
@@ -173,7 +186,7 @@
             txtProdStock.Location = new Point(6, 300);
             txtProdStock.Name = "txtProdStock";
             txtProdStock.Size = new Size(311, 23);
-            txtProdStock.TabIndex = 14;
+            txtProdStock.TabIndex = 4;
             // 
             // lblProdCat
             // 
@@ -191,7 +204,7 @@
             cmbProdCat.Location = new Point(6, 172);
             cmbProdCat.Name = "cmbProdCat";
             cmbProdCat.Size = new Size(311, 23);
-            cmbProdCat.TabIndex = 12;
+            cmbProdCat.TabIndex = 2;
             // 
             // btnDelete
             // 
@@ -203,9 +216,10 @@
             btnDelete.Location = new Point(196, 357);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(89, 28);
-            btnDelete.TabIndex = 8;
+            btnDelete.TabIndex = 7;
             btnDelete.Text = "Eliminar";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -217,9 +231,10 @@
             btnEdit.Location = new Point(101, 357);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(89, 28);
-            btnEdit.TabIndex = 7;
+            btnEdit.TabIndex = 6;
             btnEdit.Text = "Editar";
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnSave
             // 
@@ -231,9 +246,10 @@
             btnSave.Location = new Point(6, 357);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(89, 28);
-            btnSave.TabIndex = 6;
+            btnSave.TabIndex = 5;
             btnSave.Text = "Guardar";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // lblProdPrice
             // 
@@ -250,7 +266,7 @@
             txtProdPrice.Location = new Point(6, 235);
             txtProdPrice.Name = "txtProdPrice";
             txtProdPrice.Size = new Size(311, 23);
-            txtProdPrice.TabIndex = 4;
+            txtProdPrice.TabIndex = 3;
             // 
             // lblProdName
             // 
@@ -267,7 +283,7 @@
             txtProdName.Location = new Point(6, 112);
             txtProdName.Name = "txtProdName";
             txtProdName.Size = new Size(311, 23);
-            txtProdName.TabIndex = 2;
+            txtProdName.TabIndex = 1;
             // 
             // lblCatId
             // 
@@ -298,8 +314,10 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Products";
             Text = "Products";
+            Load += Products_Load;
             grpbProdList.ResumeLayout(false);
             grpbProdList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             grpbProdData.ResumeLayout(false);
             grpbProdData.PerformLayout();
             ResumeLayout(false);
@@ -328,5 +346,6 @@
         private TextBox txtProdStock;
         private Label lblColors;
         private Button btnExport;
+        private DataGridView dgvProducts;
     }
 }

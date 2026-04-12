@@ -39,11 +39,13 @@
             lblCatId = new Label();
             txtCatId = new TextBox();
             grpbCatList = new GroupBox();
+            dgvCategories = new DataGridView();
             lblCatCnt = new Label();
             btnFind = new Button();
             txtFind = new TextBox();
             grpbCatData.SuspendLayout();
             grpbCatList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvCategories).BeginInit();
             SuspendLayout();
             // 
             // grpbCatData
@@ -75,9 +77,10 @@
             btnDelete.Location = new Point(196, 221);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(89, 28);
-            btnDelete.TabIndex = 8;
+            btnDelete.TabIndex = 5;
             btnDelete.Text = "Eliminar";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -89,9 +92,10 @@
             btnEdit.Location = new Point(101, 221);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(89, 28);
-            btnEdit.TabIndex = 7;
+            btnEdit.TabIndex = 4;
             btnEdit.Text = "Editar";
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnSave
             // 
@@ -103,9 +107,10 @@
             btnSave.Location = new Point(6, 221);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(89, 28);
-            btnSave.TabIndex = 6;
+            btnSave.TabIndex = 3;
             btnSave.Text = "Guardar";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // lblCatDesc
             // 
@@ -122,7 +127,7 @@
             txtCatDesc.Location = new Point(6, 174);
             txtCatDesc.Name = "txtCatDesc";
             txtCatDesc.Size = new Size(311, 23);
-            txtCatDesc.TabIndex = 4;
+            txtCatDesc.TabIndex = 2;
             // 
             // lblCatName
             // 
@@ -139,7 +144,7 @@
             txtCatName.Location = new Point(6, 112);
             txtCatName.Name = "txtCatName";
             txtCatName.Size = new Size(311, 23);
-            txtCatName.TabIndex = 2;
+            txtCatName.TabIndex = 1;
             // 
             // lblCatId
             // 
@@ -162,6 +167,7 @@
             // 
             // grpbCatList
             // 
+            grpbCatList.Controls.Add(dgvCategories);
             grpbCatList.Controls.Add(lblCatCnt);
             grpbCatList.Controls.Add(btnFind);
             grpbCatList.Controls.Add(txtFind);
@@ -172,6 +178,14 @@
             grpbCatList.TabIndex = 1;
             grpbCatList.TabStop = false;
             grpbCatList.Text = "Listado de categorías";
+            // 
+            // dgvCategories
+            // 
+            dgvCategories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCategories.Location = new Point(6, 53);
+            dgvCategories.Name = "dgvCategories";
+            dgvCategories.Size = new Size(571, 470);
+            dgvCategories.TabIndex = 11;
             // 
             // lblCatCnt
             // 
@@ -194,9 +208,10 @@
             btnFind.Location = new Point(488, 18);
             btnFind.Name = "btnFind";
             btnFind.Size = new Size(89, 28);
-            btnFind.TabIndex = 9;
+            btnFind.TabIndex = 7;
             btnFind.Text = "Buscar";
             btnFind.UseVisualStyleBackColor = false;
+            btnFind.Click += btnFind_Click;
             // 
             // txtFind
             // 
@@ -204,7 +219,7 @@
             txtFind.Name = "txtFind";
             txtFind.PlaceholderText = "Buscar categoría...";
             txtFind.Size = new Size(476, 23);
-            txtFind.TabIndex = 0;
+            txtFind.TabIndex = 6;
             // 
             // Categories
             // 
@@ -216,10 +231,12 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Categories";
             Text = "Categories";
+            Load += Categories_Load;
             grpbCatData.ResumeLayout(false);
             grpbCatData.PerformLayout();
             grpbCatList.ResumeLayout(false);
             grpbCatList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvCategories).EndInit();
             ResumeLayout(false);
         }
 
@@ -239,5 +256,6 @@
         private TextBox txtFind;
         private Button btnFind;
         private Label lblCatCnt;
+        private DataGridView dgvCategories;
     }
 }
