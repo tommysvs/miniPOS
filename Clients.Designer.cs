@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             grpbCliList = new GroupBox();
+            dgvClients = new DataGridView();
             btnExport = new Button();
             lblCliCnt = new Label();
             btnFind = new Button();
             txtFind = new TextBox();
             grpbCliData = new GroupBox();
+            lblErrorEmail = new Label();
+            txtCliTel = new TextBox();
             lblCliAdd = new Label();
             txtCliAdd = new TextBox();
             lblCliTel = new Label();
@@ -46,13 +49,14 @@
             txtCliName = new TextBox();
             lblCliId = new Label();
             txtCliId = new TextBox();
-            txtCliTel = new TextBox();
             grpbCliList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvClients).BeginInit();
             grpbCliData.SuspendLayout();
             SuspendLayout();
             // 
             // grpbCliList
             // 
+            grpbCliList.Controls.Add(dgvClients);
             grpbCliList.Controls.Add(btnExport);
             grpbCliList.Controls.Add(lblCliCnt);
             grpbCliList.Controls.Add(btnFind);
@@ -65,6 +69,16 @@
             grpbCliList.TabStop = false;
             grpbCliList.Text = "Listado de clientes";
             // 
+            // dgvClients
+            // 
+            dgvClients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvClients.Location = new Point(6, 53);
+            dgvClients.Name = "dgvClients";
+            dgvClients.Size = new Size(571, 452);
+            dgvClients.TabIndex = 14;
+            dgvClients.CellClick += dgvClients_CellClick;
+            // 
             // btnExport
             // 
             btnExport.BackColor = Color.Silver;
@@ -75,9 +89,10 @@
             btnExport.Location = new Point(441, 511);
             btnExport.Name = "btnExport";
             btnExport.Size = new Size(136, 28);
-            btnExport.TabIndex = 13;
+            btnExport.TabIndex = 10;
             btnExport.Text = "Exportar a Excel";
             btnExport.UseVisualStyleBackColor = false;
+            btnExport.Click += btnExport_Click;
             // 
             // lblCliCnt
             // 
@@ -103,6 +118,7 @@
             btnFind.TabIndex = 9;
             btnFind.Text = "Buscar";
             btnFind.UseVisualStyleBackColor = false;
+            btnFind.Click += btnFind_Click;
             // 
             // txtFind
             // 
@@ -110,10 +126,11 @@
             txtFind.Name = "txtFind";
             txtFind.PlaceholderText = "Buscar producto en tiempo real";
             txtFind.Size = new Size(476, 23);
-            txtFind.TabIndex = 0;
+            txtFind.TabIndex = 8;
             // 
             // grpbCliData
             // 
+            grpbCliData.Controls.Add(lblErrorEmail);
             grpbCliData.Controls.Add(txtCliTel);
             grpbCliData.Controls.Add(lblCliAdd);
             grpbCliData.Controls.Add(txtCliAdd);
@@ -135,6 +152,24 @@
             grpbCliData.TabStop = false;
             grpbCliData.Text = "Datos del cliente";
             // 
+            // lblErrorEmail
+            // 
+            lblErrorEmail.AutoSize = true;
+            lblErrorEmail.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblErrorEmail.ForeColor = Color.Red;
+            lblErrorEmail.Location = new Point(7, 261);
+            lblErrorEmail.Name = "lblErrorEmail";
+            lblErrorEmail.Size = new Size(0, 13);
+            lblErrorEmail.TabIndex = 17;
+            // 
+            // txtCliTel
+            // 
+            txtCliTel.Location = new Point(7, 172);
+            txtCliTel.Name = "txtCliTel";
+            txtCliTel.Size = new Size(310, 23);
+            txtCliTel.TabIndex = 2;
+            txtCliTel.TextChanged += txtCliTel_TextChanged;
+            // 
             // lblCliAdd
             // 
             lblCliAdd.AutoSize = true;
@@ -150,7 +185,7 @@
             txtCliAdd.Location = new Point(6, 300);
             txtCliAdd.Name = "txtCliAdd";
             txtCliAdd.Size = new Size(311, 23);
-            txtCliAdd.TabIndex = 14;
+            txtCliAdd.TabIndex = 4;
             // 
             // lblCliTel
             // 
@@ -172,9 +207,10 @@
             btnDelete.Location = new Point(197, 511);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(89, 28);
-            btnDelete.TabIndex = 8;
+            btnDelete.TabIndex = 7;
             btnDelete.Text = "Eliminar";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -186,9 +222,10 @@
             btnEdit.Location = new Point(102, 511);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(89, 28);
-            btnEdit.TabIndex = 7;
+            btnEdit.TabIndex = 6;
             btnEdit.Text = "Editar";
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnSave
             // 
@@ -200,9 +237,10 @@
             btnSave.Location = new Point(7, 511);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(89, 28);
-            btnSave.TabIndex = 6;
+            btnSave.TabIndex = 5;
             btnSave.Text = "Guardar";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // lblCliEmail
             // 
@@ -219,7 +257,8 @@
             txtCliEmail.Location = new Point(6, 235);
             txtCliEmail.Name = "txtCliEmail";
             txtCliEmail.Size = new Size(311, 23);
-            txtCliEmail.TabIndex = 4;
+            txtCliEmail.TabIndex = 3;
+            txtCliEmail.TextChanged += txtCliEmail_TextChanged;
             // 
             // lblCliName
             // 
@@ -236,7 +275,7 @@
             txtCliName.Location = new Point(6, 112);
             txtCliName.Name = "txtCliName";
             txtCliName.Size = new Size(311, 23);
-            txtCliName.TabIndex = 2;
+            txtCliName.TabIndex = 1;
             // 
             // lblCliId
             // 
@@ -257,13 +296,6 @@
             txtCliId.Size = new Size(311, 23);
             txtCliId.TabIndex = 0;
             // 
-            // txtCliTel
-            // 
-            txtCliTel.Location = new Point(7, 172);
-            txtCliTel.Name = "txtCliTel";
-            txtCliTel.Size = new Size(310, 23);
-            txtCliTel.TabIndex = 16;
-            // 
             // Clients
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -274,8 +306,10 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Clients";
             Text = "Clients";
+            Load += Clients_Load;
             grpbCliList.ResumeLayout(false);
             grpbCliList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvClients).EndInit();
             grpbCliData.ResumeLayout(false);
             grpbCliData.PerformLayout();
             ResumeLayout(false);
@@ -302,5 +336,7 @@
         private Label lblCliId;
         private TextBox txtCliId;
         private TextBox txtCliTel;
+        private DataGridView dgvClients;
+        private Label lblErrorEmail;
     }
 }
