@@ -66,7 +66,7 @@ namespace miniPOS
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error fetching clients: " + ex.Message);
+                    MessageBox.Show("Error al obtener clientes: " + ex.Message);
                 }
             }
         }
@@ -104,7 +104,7 @@ namespace miniPOS
 
             if (txtCliAdd.Text == "")
             {
-                MessageBox.Show("El stock no puede estar vacío.");
+                MessageBox.Show("La dirección no puede estar vacía.");
                 return;
             }
 
@@ -223,7 +223,7 @@ namespace miniPOS
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al eliminar producto: " + ex.Message);
+                        MessageBox.Show("Error al eliminar cliente: " + ex.Message);
                     }
                 }
             }

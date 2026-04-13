@@ -107,7 +107,7 @@ namespace miniPOS
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar datos: " + ex.Message);
+                    MessageBox.Show("Error al obtener productos: " + ex.Message);
                 }
             }
         }

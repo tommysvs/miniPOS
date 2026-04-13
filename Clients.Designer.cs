@@ -124,7 +124,7 @@
             // 
             txtFind.Location = new Point(6, 22);
             txtFind.Name = "txtFind";
-            txtFind.PlaceholderText = "Buscar producto en tiempo real";
+            txtFind.PlaceholderText = "Buscar por nombre, teléfono o correo...";
             txtFind.Size = new Size(476, 23);
             txtFind.TabIndex = 8;
             // 
