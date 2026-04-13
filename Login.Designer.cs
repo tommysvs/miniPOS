@@ -38,6 +38,7 @@
             txtUser = new TextBox();
             lblTitle = new Label();
             pbxLogo = new PictureBox();
+            lblSubtitle = new Label();
             loginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxLogo).BeginInit();
             SuspendLayout();
@@ -45,6 +46,7 @@
             // loginPanel
             // 
             loginPanel.BackColor = Color.AliceBlue;
+            loginPanel.Controls.Add(lblSubtitle);
             loginPanel.Controls.Add(lblVersion);
             loginPanel.Controls.Add(btnLogin);
             loginPanel.Controls.Add(label1);
@@ -75,7 +77,7 @@
             btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.ForeColor = SystemColors.ControlLightLight;
-            btnLogin.Location = new Point(134, 328);
+            btnLogin.Location = new Point(131, 353);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(105, 27);
             btnLogin.TabIndex = 6;
@@ -86,7 +88,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(101, 209);
+            label1.Location = new Point(98, 234);
             label1.Name = "label1";
             label1.Size = new Size(47, 15);
             label1.TabIndex = 5;
@@ -95,7 +97,7 @@
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(101, 263);
+            lblPassword.Location = new Point(98, 288);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(67, 15);
             lblPassword.TabIndex = 4;
@@ -103,7 +105,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(101, 281);
+            txtPassword.Location = new Point(98, 306);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(171, 23);
             txtPassword.TabIndex = 3;
@@ -111,7 +113,7 @@
             // 
             // txtUser
             // 
-            txtUser.Location = new Point(101, 227);
+            txtUser.Location = new Point(98, 252);
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(171, 23);
             txtUser.TabIndex = 2;
@@ -120,7 +122,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(119, 129);
+            lblTitle.Location = new Point(121, 129);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(127, 37);
             lblTitle.TabIndex = 1;
@@ -135,6 +137,16 @@
             pbxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pbxLogo.TabIndex = 0;
             pbxLogo.TabStop = false;
+            // 
+            // lblSubtitle
+            // 
+            lblSubtitle.AutoSize = true;
+            lblSubtitle.ForeColor = SystemColors.ControlDarkDark;
+            lblSubtitle.Location = new Point(103, 166);
+            lblSubtitle.Name = "lblSubtitle";
+            lblSubtitle.Size = new Size(166, 15);
+            lblSubtitle.TabIndex = 8;
+            lblSubtitle.Text = "Sistema de inventario y ventas";
             // 
             // Login
             // 
@@ -167,5 +179,6 @@
         private Label lblPassword;
         private Button btnLogin;
         private Label lblVersion;
+        private Label lblSubtitle;
     }
 }
