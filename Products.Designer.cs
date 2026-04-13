@@ -81,6 +81,7 @@
             dgvProducts.Size = new Size(571, 452);
             dgvProducts.TabIndex = 14;
             dgvProducts.CellClick += dgvProducts_CellClick;
+            dgvProducts.DataBindingComplete += dgvProducts_DataBindingComplete;
             // 
             // btnExport
             // 

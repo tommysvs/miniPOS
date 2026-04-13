@@ -9,7 +9,7 @@ namespace miniPOS
 {
     public partial class Products : Form
     {
-        System.Data.DataTable table = new System.Data.DataTable();
+        DataTable table = new DataTable();
         int selected_id = 0;
 
         public Products()
@@ -26,6 +26,8 @@ namespace miniPOS
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProducts.ReadOnly = true;
             dgvProducts.MultiSelect = false;
+
+            dgvProducts.DataBindingComplete += dgvProducts_DataBindingComplete;
         }
 
         private void ClearFields()
@@ -36,7 +38,7 @@ namespace miniPOS
             txtProdStock.Clear();
 
             table.DefaultView.RowFilter = string.Empty;
-            txtFind.Text = "";
+            txtFind.Clear();
             cmbProdCatFind.SelectedIndex = -1;
         }
 
@@ -84,7 +86,11 @@ namespace miniPOS
                             p.category_id, 
                             c.name AS category_name, 
                             p.price, 
-                            p.stock 
+                            p.stock,
+                            CASE 
+                                WHEN p.stock < 5 THEN 'BAJO' 
+                                ELSE 'OK' 
+                            END AS estado
                         FROM products p
                         LEFT JOIN categories c ON p.category_id = c.id";
 
@@ -99,6 +105,7 @@ namespace miniPOS
                     dgvProducts.Columns["category_name"].HeaderText = "Categoría";
                     dgvProducts.Columns["price"].HeaderText = "Precio";
                     dgvProducts.Columns["stock"].HeaderText = "Stock";
+                    dgvProducts.Columns["estado"].HeaderText = "Estado";
 
                     dgvProducts.Columns["category_id"].Visible = false;
                 }
@@ -158,9 +165,6 @@ namespace miniPOS
 
                     ClearFields();
                     GetProducts();
-
-                    dgvProducts.DataSource = null;
-                    dgvProducts.DataSource = table;
 
                     CountProducts();
                 }
@@ -260,7 +264,9 @@ namespace miniPOS
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Producto eliminado exitosamente.");
 
+                        ClearFields();
                         GetProducts();
+                        CountProducts();
                     }
                     catch (Exception ex)
                     {
@@ -377,6 +383,34 @@ namespace miniPOS
             }
 
             e.Handled = true;
+        }
+
+        private void dgvProducts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvProducts.Rows)
+            {
+                if (row.IsNewRow) 
+                    continue;
+
+                string estado = row.Cells["estado"].Value?.ToString();
+
+                if (estado == "OK")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightGreen;
+
+                    row.Cells["stock"].Style.ForeColor = Color.DarkGreen;
+                    row.Cells["stock"].Style.Font = new Font(dgvProducts.Font, FontStyle.Bold);
+                }
+                else if (estado == "BAJO")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightPink;
+
+                    row.Cells["stock"].Style.ForeColor = Color.DarkRed;
+                    row.Cells["stock"].Style.Font = new Font(dgvProducts.Font, FontStyle.Bold);
+                }
+            }
+
+            dgvProducts.ClearSelection();
         }
     }
 }
