@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             grpbProdList = new GroupBox();
             dgvProducts = new DataGridView();
             btnExport = new Button();
@@ -37,6 +38,7 @@
             btnFind = new Button();
             txtFind = new TextBox();
             grpbProdData = new GroupBox();
+            lblLowStockWarning = new Label();
             lblProdStock = new Label();
             txtProdStock = new TextBox();
             lblProdCat = new Label();
@@ -50,6 +52,8 @@
             txtProdName = new TextBox();
             lblCatId = new Label();
             txtProdId = new TextBox();
+            niLowStockPrd = new NotifyIcon(components);
+            btnClearFields = new Button();
             grpbProdList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             grpbProdData.SuspendLayout();
@@ -153,6 +157,8 @@
             // 
             // grpbProdData
             // 
+            grpbProdData.Controls.Add(btnClearFields);
+            grpbProdData.Controls.Add(lblLowStockWarning);
             grpbProdData.Controls.Add(lblProdStock);
             grpbProdData.Controls.Add(txtProdStock);
             grpbProdData.Controls.Add(lblProdCat);
@@ -173,6 +179,19 @@
             grpbProdData.TabIndex = 2;
             grpbProdData.TabStop = false;
             grpbProdData.Text = "Datos del producto";
+            // 
+            // lblLowStockWarning
+            // 
+            lblLowStockWarning.AutoSize = true;
+            lblLowStockWarning.BackColor = Color.MistyRose;
+            lblLowStockWarning.ForeColor = Color.Red;
+            lblLowStockWarning.Location = new Point(6, 394);
+            lblLowStockWarning.Name = "lblLowStockWarning";
+            lblLowStockWarning.Padding = new Padding(5, 7, 5, 7);
+            lblLowStockWarning.Size = new Size(303, 29);
+            lblLowStockWarning.TabIndex = 16;
+            lblLowStockWarning.Text = "ADVERTENCIA: STOCK BAJO — Requiere reposición";
+            lblLowStockWarning.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblProdStock
             // 
@@ -217,7 +236,7 @@
             btnDelete.FlatAppearance.BorderSize = 0;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.ForeColor = SystemColors.ButtonHighlight;
-            btnDelete.Location = new Point(196, 357);
+            btnDelete.Location = new Point(196, 348);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(89, 28);
             btnDelete.TabIndex = 7;
@@ -232,7 +251,7 @@
             btnEdit.FlatAppearance.BorderSize = 0;
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.ForeColor = SystemColors.ButtonHighlight;
-            btnEdit.Location = new Point(101, 357);
+            btnEdit.Location = new Point(101, 348);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(89, 28);
             btnEdit.TabIndex = 6;
@@ -247,7 +266,7 @@
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.ForeColor = SystemColors.ButtonHighlight;
-            btnSave.Location = new Point(6, 357);
+            btnSave.Location = new Point(6, 348);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(89, 28);
             btnSave.TabIndex = 5;
@@ -309,6 +328,26 @@
             txtProdId.Size = new Size(311, 23);
             txtProdId.TabIndex = 0;
             // 
+            // niLowStockPrd
+            // 
+            niLowStockPrd.Text = "notifyIcon1";
+            niLowStockPrd.Visible = true;
+            // 
+            // btnClearFields
+            // 
+            btnClearFields.BackColor = Color.DodgerBlue;
+            btnClearFields.Cursor = Cursors.Hand;
+            btnClearFields.FlatAppearance.BorderSize = 0;
+            btnClearFields.FlatStyle = FlatStyle.Flat;
+            btnClearFields.ForeColor = SystemColors.ButtonHighlight;
+            btnClearFields.Location = new Point(6, 511);
+            btnClearFields.Name = "btnClearFields";
+            btnClearFields.Size = new Size(117, 28);
+            btnClearFields.TabIndex = 17;
+            btnClearFields.Text = "Limpiar campos";
+            btnClearFields.UseVisualStyleBackColor = false;
+            btnClearFields.Click += btnClearFields_Click;
+            // 
             // Products
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -352,5 +391,8 @@
         private Label lblColors;
         private Button btnExport;
         private DataGridView dgvProducts;
+        private Label lblLowStockWarning;
+        private NotifyIcon niLowStockPrd;
+        private Button btnClearFields;
     }
 }

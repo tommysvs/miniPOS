@@ -24,6 +24,11 @@ namespace miniPOS
             dgvProducts.MultiSelect = false;
 
             dgvProducts.DataBindingComplete += dgvProducts_DataBindingComplete;
+
+            lblLowStockWarning.Visible = false;
+
+            niLowStockPrd.Icon = SystemIcons.Warning;
+            niLowStockPrd.Visible = false;
         }
 
         private void ClearFields()
@@ -158,6 +163,21 @@ namespace miniPOS
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Producto registrado exitosamente.");
+
+                    int stock = int.Parse(txtProdStock.Text);
+                    if (stock < 5)
+                    {
+                        lblLowStockWarning.Visible = true;
+
+                        niLowStockPrd.Visible = true;
+                        niLowStockPrd.ShowBalloonTip(3000, "Bajo stock", $"Requiere reposición", ToolTipIcon.Warning);
+                    }
+                    else
+                    {
+                        lblLowStockWarning.Visible = false;
+
+                        niLowStockPrd.Visible = false;
+                    }
 
                     ClearFields();
                     GetProducts();
@@ -348,7 +368,7 @@ namespace miniPOS
         {
             foreach (DataGridViewRow row in dgvProducts.Rows)
             {
-                if (row.IsNewRow) 
+                if (row.IsNewRow)
                     continue;
 
                 string estado = row.Cells["estado"].Value?.ToString();
@@ -370,6 +390,13 @@ namespace miniPOS
             }
 
             dgvProducts.ClearSelection();
+        }
+
+        private void btnClearFields_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+
+            lblLowStockWarning.Visible = false;
         }
     }
 }
