@@ -21,6 +21,9 @@ namespace miniPOS
             dgvSuppliers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSuppliers.ReadOnly = true;
             dgvSuppliers.MultiSelect = false;
+
+            niSuppSaved.Icon = SystemIcons.Information;
+            niSuppSaved.Visible = false;
         }
 
         private void ClearFields()
@@ -138,6 +141,9 @@ namespace miniPOS
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Proveedor registrado exitosamente.");
+
+                    niSuppSaved.Visible = true;
+                    niSuppSaved.ShowBalloonTip(3000, "Proveedor registrado", $"El proveedor ha sido registrado exitosamente", ToolTipIcon.Info);
 
                     ClearFields();
                     GetSuppliers();

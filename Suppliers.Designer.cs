@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             grpbSuppList = new GroupBox();
             dgvSuppliers = new DataGridView();
             btnExport = new Button();
@@ -53,6 +54,7 @@
             txtSuppName = new TextBox();
             lblSuppId = new Label();
             txtSuppId = new TextBox();
+            niSuppSaved = new NotifyIcon(components);
             grpbSuppList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSuppliers).BeginInit();
             grpbSuppData.SuspendLayout();
@@ -337,6 +339,11 @@
             txtSuppId.Size = new Size(311, 23);
             txtSuppId.TabIndex = 0;
             // 
+            // niSuppSaved
+            // 
+            niSuppSaved.Text = "notifyIcon1";
+            niSuppSaved.Visible = true;
+            // 
             // Suppliers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -383,5 +390,6 @@
         private TextBox txtSuppCntct;
         private DataGridView dgvSuppliers;
         private Label lblErrorEmail;
+        private NotifyIcon niSuppSaved;
     }
 }
