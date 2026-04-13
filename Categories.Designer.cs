@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             grpbCatData = new GroupBox();
+            btnClearFields = new Button();
             btnDelete = new Button();
             btnEdit = new Button();
             btnSave = new Button();
@@ -50,6 +51,7 @@
             // 
             // grpbCatData
             // 
+            grpbCatData.Controls.Add(btnClearFields);
             grpbCatData.Controls.Add(btnDelete);
             grpbCatData.Controls.Add(btnEdit);
             grpbCatData.Controls.Add(btnSave);
@@ -66,6 +68,21 @@
             grpbCatData.TabIndex = 0;
             grpbCatData.TabStop = false;
             grpbCatData.Text = "Datos de la categoría";
+            // 
+            // btnClearFields
+            // 
+            btnClearFields.BackColor = Color.DodgerBlue;
+            btnClearFields.Cursor = Cursors.Hand;
+            btnClearFields.FlatAppearance.BorderSize = 0;
+            btnClearFields.FlatStyle = FlatStyle.Flat;
+            btnClearFields.ForeColor = SystemColors.ButtonHighlight;
+            btnClearFields.Location = new Point(6, 511);
+            btnClearFields.Name = "btnClearFields";
+            btnClearFields.Size = new Size(117, 28);
+            btnClearFields.TabIndex = 6;
+            btnClearFields.Text = "Limpiar campos";
+            btnClearFields.UseVisualStyleBackColor = false;
+            btnClearFields.Click += btnClearFields_Click;
             // 
             // btnDelete
             // 
@@ -259,5 +276,6 @@
         private Button btnFind;
         private Label lblCatCnt;
         private DataGridView dgvCategories;
+        private Button btnClearFields;
     }
 }

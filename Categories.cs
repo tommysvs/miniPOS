@@ -169,6 +169,18 @@ namespace miniPOS
                 return;
             }
 
+            int productCount = GetProductCountByCategory(selected_id);
+
+            if (productCount > 0)
+            {
+                MessageBox.Show(
+                    $"No se puede eliminar esta categoría porque tiene {productCount} producto(s) asociado(s).",
+                    "Advertencia",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult resultado = MessageBox.Show(
                 "¿Está seguro de que desea eliminar esta categoría?",
                 "Confirmar eliminación", MessageBoxButtons.YesNo);
@@ -184,7 +196,10 @@ namespace miniPOS
                         MySqlCommand cmd = new MySqlCommand(query, conn);
                         cmd.Parameters.AddWithValue("@id", selected_id);
                         cmd.ExecuteNonQuery();
+
                         MessageBox.Show("Categoría eliminada exitosamente.");
+
+                        ClearFields();
                         GetCategories();
                     }
                     catch (Exception ex)
@@ -193,6 +208,34 @@ namespace miniPOS
                     }
                 }
             }
+        }
+
+        private int GetProductCountByCategory(int categoryId)
+        {
+            using (MySqlConnection conn = new MySqlConnection(DbConfig.ConnectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM products WHERE category_id = @category_id";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@category_id", categoryId);
+
+                    long count = (long)cmd.ExecuteScalar();
+                    return (int)count;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al verificar productos: " + ex.Message);
+                    return -1;
+                }
+            }
+        }
+
+        private void btnClearFields_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
 
         private void btnFind_Click(object sender, EventArgs e)
