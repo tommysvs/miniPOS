@@ -29,11 +29,17 @@
         private void InitializeComponent()
         {
             grpbSuppList = new GroupBox();
+            dgvSuppliers = new DataGridView();
             btnExport = new Button();
             lblSuppCnt = new Label();
             btnFind = new Button();
             txtFind = new TextBox();
             grpbSuppData = new GroupBox();
+            lblErrorEmail = new Label();
+            lblSuppCntct = new Label();
+            txtSuppCntct = new TextBox();
+            lblSuppProds = new Label();
+            txtSuppPrd = new TextBox();
             txtSuppTel = new TextBox();
             lblCliAdd = new Label();
             txtSuppAdd = new TextBox();
@@ -47,16 +53,14 @@
             txtSuppName = new TextBox();
             lblSuppId = new Label();
             txtSuppId = new TextBox();
-            lblSuppProds = new Label();
-            textBox1 = new TextBox();
-            lblSuppCntct = new Label();
-            txtSuppCntct = new TextBox();
             grpbSuppList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSuppliers).BeginInit();
             grpbSuppData.SuspendLayout();
             SuspendLayout();
             // 
             // grpbSuppList
             // 
+            grpbSuppList.Controls.Add(dgvSuppliers);
             grpbSuppList.Controls.Add(btnExport);
             grpbSuppList.Controls.Add(lblSuppCnt);
             grpbSuppList.Controls.Add(btnFind);
@@ -69,6 +73,15 @@
             grpbSuppList.TabStop = false;
             grpbSuppList.Text = "Listado de proveedores";
             // 
+            // dgvSuppliers
+            // 
+            dgvSuppliers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSuppliers.Location = new Point(6, 53);
+            dgvSuppliers.Name = "dgvSuppliers";
+            dgvSuppliers.Size = new Size(571, 452);
+            dgvSuppliers.TabIndex = 14;
+            dgvSuppliers.CellClick += dgvSuppliers_CellClick;
+            // 
             // btnExport
             // 
             btnExport.BackColor = Color.Silver;
@@ -79,9 +92,10 @@
             btnExport.Location = new Point(441, 511);
             btnExport.Name = "btnExport";
             btnExport.Size = new Size(136, 28);
-            btnExport.TabIndex = 13;
+            btnExport.TabIndex = 12;
             btnExport.Text = "Exportar a Excel";
             btnExport.UseVisualStyleBackColor = false;
+            btnExport.Click += btnExport_Click;
             // 
             // lblSuppCnt
             // 
@@ -104,9 +118,10 @@
             btnFind.Location = new Point(488, 18);
             btnFind.Name = "btnFind";
             btnFind.Size = new Size(89, 28);
-            btnFind.TabIndex = 9;
+            btnFind.TabIndex = 11;
             btnFind.Text = "Buscar";
             btnFind.UseVisualStyleBackColor = false;
+            btnFind.Click += btnFind_Click;
             // 
             // txtFind
             // 
@@ -114,14 +129,15 @@
             txtFind.Name = "txtFind";
             txtFind.PlaceholderText = "Buscar producto en tiempo real";
             txtFind.Size = new Size(476, 23);
-            txtFind.TabIndex = 0;
+            txtFind.TabIndex = 10;
             // 
             // grpbSuppData
             // 
+            grpbSuppData.Controls.Add(lblErrorEmail);
             grpbSuppData.Controls.Add(lblSuppCntct);
             grpbSuppData.Controls.Add(txtSuppCntct);
             grpbSuppData.Controls.Add(lblSuppProds);
-            grpbSuppData.Controls.Add(textBox1);
+            grpbSuppData.Controls.Add(txtSuppPrd);
             grpbSuppData.Controls.Add(txtSuppTel);
             grpbSuppData.Controls.Add(lblCliAdd);
             grpbSuppData.Controls.Add(txtSuppAdd);
@@ -143,12 +159,57 @@
             grpbSuppData.TabStop = false;
             grpbSuppData.Text = "Datos del proveedor";
             // 
+            // lblErrorEmail
+            // 
+            lblErrorEmail.AutoSize = true;
+            lblErrorEmail.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblErrorEmail.ForeColor = Color.Red;
+            lblErrorEmail.Location = new Point(7, 331);
+            lblErrorEmail.Name = "lblErrorEmail";
+            lblErrorEmail.Size = new Size(0, 13);
+            lblErrorEmail.TabIndex = 21;
+            // 
+            // lblSuppCntct
+            // 
+            lblSuppCntct.AutoSize = true;
+            lblSuppCntct.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSuppCntct.Location = new Point(6, 160);
+            lblSuppCntct.Name = "lblSuppCntct";
+            lblSuppCntct.Size = new Size(120, 15);
+            lblSuppCntct.TabIndex = 20;
+            lblSuppCntct.Text = "Contacto (persona): *";
+            // 
+            // txtSuppCntct
+            // 
+            txtSuppCntct.Location = new Point(6, 178);
+            txtSuppCntct.Name = "txtSuppCntct";
+            txtSuppCntct.Size = new Size(311, 23);
+            txtSuppCntct.TabIndex = 2;
+            // 
+            // lblSuppProds
+            // 
+            lblSuppProds.AutoSize = true;
+            lblSuppProds.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSuppProds.Location = new Point(6, 423);
+            lblSuppProds.Name = "lblSuppProds";
+            lblSuppProds.Size = new Size(148, 15);
+            lblSuppProds.TabIndex = 18;
+            lblSuppProds.Text = "Productos que suministra: ";
+            // 
+            // txtSuppPrd
+            // 
+            txtSuppPrd.Location = new Point(6, 441);
+            txtSuppPrd.Name = "txtSuppPrd";
+            txtSuppPrd.Size = new Size(311, 23);
+            txtSuppPrd.TabIndex = 6;
+            // 
             // txtSuppTel
             // 
             txtSuppTel.Location = new Point(7, 239);
             txtSuppTel.Name = "txtSuppTel";
             txtSuppTel.Size = new Size(310, 23);
-            txtSuppTel.TabIndex = 16;
+            txtSuppTel.TabIndex = 3;
+            txtSuppTel.TextChanged += txtSuppTel_TextChanged;
             // 
             // lblCliAdd
             // 
@@ -165,7 +226,7 @@
             txtSuppAdd.Location = new Point(7, 371);
             txtSuppAdd.Name = "txtSuppAdd";
             txtSuppAdd.Size = new Size(310, 23);
-            txtSuppAdd.TabIndex = 14;
+            txtSuppAdd.TabIndex = 5;
             // 
             // lblCliTel
             // 
@@ -187,9 +248,10 @@
             btnDelete.Location = new Point(196, 511);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(89, 28);
-            btnDelete.TabIndex = 8;
+            btnDelete.TabIndex = 9;
             btnDelete.Text = "Eliminar";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -201,9 +263,10 @@
             btnEdit.Location = new Point(102, 511);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(89, 28);
-            btnEdit.TabIndex = 7;
+            btnEdit.TabIndex = 8;
             btnEdit.Text = "Editar";
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnSave
             // 
@@ -215,9 +278,10 @@
             btnSave.Location = new Point(7, 511);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(89, 28);
-            btnSave.TabIndex = 6;
+            btnSave.TabIndex = 7;
             btnSave.Text = "Guardar";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // lblCliEmail
             // 
@@ -235,6 +299,7 @@
             txtSuppEmail.Name = "txtSuppEmail";
             txtSuppEmail.Size = new Size(310, 23);
             txtSuppEmail.TabIndex = 4;
+            txtSuppEmail.TextChanged += txtSuppEmail_TextChanged;
             // 
             // lblSuppName
             // 
@@ -251,7 +316,7 @@
             txtSuppName.Location = new Point(6, 112);
             txtSuppName.Name = "txtSuppName";
             txtSuppName.Size = new Size(311, 23);
-            txtSuppName.TabIndex = 2;
+            txtSuppName.TabIndex = 1;
             // 
             // lblSuppId
             // 
@@ -272,40 +337,6 @@
             txtSuppId.Size = new Size(311, 23);
             txtSuppId.TabIndex = 0;
             // 
-            // lblSuppProds
-            // 
-            lblSuppProds.AutoSize = true;
-            lblSuppProds.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSuppProds.Location = new Point(6, 423);
-            lblSuppProds.Name = "lblSuppProds";
-            lblSuppProds.Size = new Size(148, 15);
-            lblSuppProds.TabIndex = 18;
-            lblSuppProds.Text = "Productos que suministra: ";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(6, 441);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(311, 23);
-            textBox1.TabIndex = 17;
-            // 
-            // lblSuppCntct
-            // 
-            lblSuppCntct.AutoSize = true;
-            lblSuppCntct.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSuppCntct.Location = new Point(6, 160);
-            lblSuppCntct.Name = "lblSuppCntct";
-            lblSuppCntct.Size = new Size(120, 15);
-            lblSuppCntct.TabIndex = 20;
-            lblSuppCntct.Text = "Contacto (persona): *";
-            // 
-            // txtSuppCntct
-            // 
-            txtSuppCntct.Location = new Point(6, 178);
-            txtSuppCntct.Name = "txtSuppCntct";
-            txtSuppCntct.Size = new Size(311, 23);
-            txtSuppCntct.TabIndex = 19;
-            // 
             // Suppliers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -316,8 +347,10 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Suppliers";
             Text = "Suppliers";
+            Load += Suppliers_Load;
             grpbSuppList.ResumeLayout(false);
             grpbSuppList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSuppliers).EndInit();
             grpbSuppData.ResumeLayout(false);
             grpbSuppData.PerformLayout();
             ResumeLayout(false);
@@ -345,8 +378,10 @@
         private Label lblSuppId;
         private TextBox txtSuppId;
         private Label lblSuppProds;
-        private TextBox textBox1;
+        private TextBox txtSuppPrd;
         private Label lblSuppCntct;
         private TextBox txtSuppCntct;
+        private DataGridView dgvSuppliers;
+        private Label lblErrorEmail;
     }
 }
