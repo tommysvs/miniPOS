@@ -347,7 +347,7 @@ namespace miniPOS
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            ExcelExport(table);
+            ExcelHelper.ExportToExcel(table, "Productos");
         }
 
         private void txtProdPrice_KeyPress(object sender, KeyPressEventArgs e)
