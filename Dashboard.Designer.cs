@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblResumen = new Label();
             lblDate = new Label();
             pnlProd = new Panel();
@@ -46,20 +47,21 @@
             lblCntLowStock = new Label();
             lblLowStock = new Label();
             grpbProducts = new GroupBox();
+            dgvLowStock = new DataGridView();
             btnGetAllProd = new Button();
             grpbSuppliers = new GroupBox();
-            btnGetAllSupp = new Button();
-            groupBox1 = new GroupBox();
-            dgvLowStock = new DataGridView();
             dgvRecSupp = new DataGridView();
+            btnGetAllSupp = new Button();
+            grpbPrdByCat = new GroupBox();
+            niLowStock = new NotifyIcon(components);
             pnlProd.SuspendLayout();
             pnlCli.SuspendLayout();
             pnlSupp.SuspendLayout();
             pnlCat.SuspendLayout();
             pnlProdLow.SuspendLayout();
             grpbProducts.SuspendLayout();
-            grpbSuppliers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLowStock).BeginInit();
+            grpbSuppliers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRecSupp).BeginInit();
             SuspendLayout();
             // 
@@ -257,6 +259,16 @@
             grpbProducts.TabStop = false;
             grpbProducts.Text = "Productos con menor stock";
             // 
+            // dgvLowStock
+            // 
+            dgvLowStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvLowStock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLowStock.Location = new Point(6, 22);
+            dgvLowStock.Name = "dgvLowStock";
+            dgvLowStock.Size = new Size(438, 219);
+            dgvLowStock.TabIndex = 1;
+            dgvLowStock.DataBindingComplete += dgvLowStock_DataBindingComplete;
+            // 
             // btnGetAllProd
             // 
             btnGetAllProd.BackColor = Color.CornflowerBlue;
@@ -269,6 +281,7 @@
             btnGetAllProd.TabIndex = 0;
             btnGetAllProd.Text = "Ver todos los productos";
             btnGetAllProd.UseVisualStyleBackColor = false;
+            btnGetAllProd.Click += btnGetAllProd_Click;
             // 
             // grpbSuppliers
             // 
@@ -282,6 +295,15 @@
             grpbSuppliers.TabStop = false;
             grpbSuppliers.Text = "Proveedores registrados recientemente";
             // 
+            // dgvRecSupp
+            // 
+            dgvRecSupp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRecSupp.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRecSupp.Location = new Point(6, 22);
+            dgvRecSupp.Name = "dgvRecSupp";
+            dgvRecSupp.Size = new Size(438, 219);
+            dgvRecSupp.TabIndex = 2;
+            // 
             // btnGetAllSupp
             // 
             btnGetAllSupp.BackColor = Color.CornflowerBlue;
@@ -294,32 +316,22 @@
             btnGetAllSupp.TabIndex = 1;
             btnGetAllSupp.Text = "Ver todos los proveedores";
             btnGetAllSupp.UseVisualStyleBackColor = false;
+            btnGetAllSupp.Click += btnGetAllSupp_Click;
             // 
-            // groupBox1
+            // grpbPrdByCat
             // 
-            groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(12, 388);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(912, 169);
-            groupBox1.TabIndex = 13;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Productos por categoría";
+            grpbPrdByCat.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpbPrdByCat.Location = new Point(12, 388);
+            grpbPrdByCat.Name = "grpbPrdByCat";
+            grpbPrdByCat.Size = new Size(912, 169);
+            grpbPrdByCat.TabIndex = 13;
+            grpbPrdByCat.TabStop = false;
+            grpbPrdByCat.Text = "Productos por categoría";
             // 
-            // dgvLowStock
+            // niLowStock
             // 
-            dgvLowStock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLowStock.Location = new Point(6, 22);
-            dgvLowStock.Name = "dgvLowStock";
-            dgvLowStock.Size = new Size(438, 219);
-            dgvLowStock.TabIndex = 1;
-            // 
-            // dgvRecSupp
-            // 
-            dgvRecSupp.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRecSupp.Location = new Point(6, 22);
-            dgvRecSupp.Name = "dgvRecSupp";
-            dgvRecSupp.Size = new Size(438, 219);
-            dgvRecSupp.TabIndex = 2;
+            niLowStock.Text = "notifyIcon1";
+            niLowStock.Visible = true;
             // 
             // Dashboard
             // 
@@ -327,7 +339,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(936, 569);
             Controls.Add(grpbSuppliers);
-            Controls.Add(groupBox1);
+            Controls.Add(grpbPrdByCat);
             Controls.Add(pnlProd);
             Controls.Add(grpbProducts);
             Controls.Add(pnlProdLow);
@@ -351,8 +363,8 @@
             pnlProdLow.ResumeLayout(false);
             pnlProdLow.PerformLayout();
             grpbProducts.ResumeLayout(false);
-            grpbSuppliers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvLowStock).EndInit();
+            grpbSuppliers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvRecSupp).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -378,10 +390,11 @@
         private Label lblLowStock;
         private GroupBox grpbProducts;
         private GroupBox grpbSuppliers;
-        private GroupBox groupBox1;
+        private GroupBox grpbPrdByCat;
         private Button btnGetAllProd;
         private Button btnGetAllSupp;
         private DataGridView dgvLowStock;
         private DataGridView dgvRecSupp;
+        private NotifyIcon niLowStock;
     }
 }
